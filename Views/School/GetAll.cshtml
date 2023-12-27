@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PartialView.Models.Department>
+@{
+    Layout = null;
+}
+
+
+
+    <div class="container">
+        <table class="table table-hover">
+            <tr class="table-dark">
+                <th>@Html.DisplayNameFor(D=>D.Dept_Id)</th>
+                <th>@Html.DisplayNameFor(D=>D.Dept_Name)</th>
+                <th>@Html.DisplayNameFor(D=>D.Dept_Desc)</th>
+                <th>@Html.DisplayNameFor(D=>D.Dept_Location)</th>
+                <th>@Html.DisplayNameFor(D=>D.Dept_Manager)</th>
+                <th>@Html.DisplayNameFor(D=>D.Hiredate)</th>
+                <th>Delete</th>
+            </tr>
+            @{ 
+                foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Dept_Id</td>
+                    <td>@item.Dept_Name</td>
+                    <td>@item.Dept_Desc</td>
+                    <td>@item.Dept_Location</td>
+                    <td>@item.Dept_Manager</td>
+                    <td>@item.Hiredate</td>
+                    <td>
+                    <a class="btn btn-outline-danger" href="/School/Delete?id=@item.Dept_Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+            }
+        </table>
+    </div>
+</body>
+</html>
